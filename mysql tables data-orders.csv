@@ -1,0 +1,4 @@
+OrderID,ProductID,PaymentID,FulFilledByEmployeeID,DateRequired,DateShipped,Status
+1,1,1,2,2018-09-05,NULL,"Not shipped"
+2,1,2,2,2018-09-04,2018-09-03,Shipped
+3,3,3,3,2018-09-06,NULL,"Not shipped"
