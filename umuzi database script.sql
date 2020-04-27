@@ -31,10 +31,21 @@ CREATE TABLE `customer` (
   `Phone` varchar(15) DEFAULT NULL,
   `Email` varchar(100) DEFAULT NULL,
   `City` varchar(20) DEFAULT NULL,
+  `Country` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CustomerID`),
   UNIQUE KEY `Address_UNIQUE` (`Address`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,'Lerato Mabitso','Hibert','Male','244 chaucer st','84789657','john@gmail.com','Johannesburg','South Africa'),(3,'Leon','Glen','Male','81 Everton Rd,Gillits','820832830','Leon@gmail.com','Durban','South Africa'),(4,'Charl','Muller','Male','290A Dorset Ecke','+44856872553','Charl.muller@yahoo.com','Berlin','Germany'),(5,'Julia','Stein','Female','2 Wernerring','+4485672445058','Js234@yahoo.com','Frankfurt','Germany');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `employees`
@@ -52,6 +63,16 @@ CREATE TABLE `employees` (
   PRIMARY KEY (`EmployeeID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
+
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (1,'Kani','Matthew','mat@gmail.com','Manager'),(2,'Lesly','Cronje','LesC@gmail.com','Clerk'),(3,'Gideon','maduku','m@gmail.com','Accountant');
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `orders`
@@ -75,6 +96,16 @@ CREATE TABLE `orders` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,1,1,2,'2018-09-05',NULL,'Not shipped'),(2,1,2,2,'2018-09-04','2018-09-03','Shipped'),(3,3,3,3,'2018-09-06',NULL,'Not shipped');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `payments`
 --
 
@@ -93,6 +124,16 @@ CREATE TABLE `payments` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `payments`
+--
+
+LOCK TABLES `payments` WRITE;
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+INSERT INTO `payments` VALUES (1,1,'2018-09-01',150.75),(5,2,'2018-09-03',150.75),(4,3,'2018-09-03',700.60);
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `products`
 --
 
@@ -108,6 +149,16 @@ CREATE TABLE `products` (
   CONSTRAINT `productID` FOREIGN KEY (`productID`) REFERENCES `orders` (`OrderID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Harly Davidson Chopper','This replica features working kickstand, front suspension, gear-shift lever',150.75),(2,'Classic Car','Turnable front wheels, steering function',550.75),(3,'Sports car','Turnable front wheels, steering function',700.60);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -118,4 +169,4 @@ CREATE TABLE `products` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-25 14:40:44
+-- Dump completed on 2020-04-27 22:40:09
